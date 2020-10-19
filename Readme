@@ -8,6 +8,14 @@ tobiemanga@gmail.com
 mta12 
 https://github.com/mta12/morgue_odoo.git
 
+git init
+git add README.md ou git add -A
+git status
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/mta12/morgue_odoo.git
+git push -u origin main
+
 ***********************
 LES FONCTIONNALITES 
 ***********************
