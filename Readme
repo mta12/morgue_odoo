@@ -1,0 +1,48 @@
+Module de gestion d'une morgue dans ODOO12
+
+BD odoo-test
+localhost:8069
+
+GIT 
+tobiemanga@gmail.com 
+mta12 
+https://github.com/mta12/morgue_odoo.git
+
+***********************
+LES FONCTIONNALITES 
+***********************
+$$ Description
+- (Le receptionniste) Arrivée d'un mort prendre les informations sur 
+le defunt (nom, prénom, date de decces, date d'enregistrement, date de sortie estimée) 
+et son responsable (nom, prénom, téléphone, lien avec le defunt, numero cni)
+- (Le receptionniste) Une fois enregistré, un coffre lui est attribué (salle, numéro, prix journalier, 
+disponible) selon la disponibilité.
+- A la sortie, une facture est élaborée puis payée, cela déclanche la libération du coffre concerné
+- le paiment se fait en cach
+- (Le responsable) peut faire tout ce que le receptionniste fait 
+    Il a accès au bilan des entrées, sorties (incluant le bilan financier) selon des périodes 
+    à définir (entre 2 dates)
+    Administration des coffres
+
+*****************
+ANALYSE TECHNIQUE
+********************
+- Les utilisateurs font partis du personnel donc le module de GRH peut etre utile 
+- Les informations sur le defunt et son responsable ( ce sont des personnes) donc on peut réutiliser 
+le profile existant en ajoutant les informations nécessaires (ON va hériter des meme interfaces)
+- hériter de sale pour les opérations financières comme le workflow d'un paeiment: 
+- Les coffres sont des produits qu'on loue pour une période
+
+
+**********************
+TAF
+********************
+- création initiale des modèles: 
+    Coffres, 
+    Defunt et Responsable_defunt (ce sont des clients qu'Odoo gere déjà),
+        La commande (quotation) intégrer les deux champs (defunt et respo) à la place de client 
+            Inclure les champs nécessaires
+        changer les infos de base de création d'un client 
+    Utilisateur, Administrateur
+
+""TOUJOURS DANS LA REFLEXION""
