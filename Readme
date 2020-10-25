@@ -42,12 +42,12 @@ le profile existant en ajoutant les informations nécessaires (ON va hériter de
 - Les coffres sont des produits qu'on loue pour une période
 
 
-**********************
+******
 TAF
-********************
+******
 - création initiale des modèles: 
     Coffres, 
-    Defunt et Responsable_defunt (ce sont des clients qu'Odoo gere déjà),
+    Defunt (Defunt) et Responsable_defunt (ce sont des clients qu'Odoo gere déjà),
         La commande (quotation) intégrer les deux champs (defunt et respo) à la place de client 
             Inclure les champs nécessaires
         changer les infos de base de création d'un client 
@@ -55,8 +55,25 @@ TAF
 
 ""TOUJOURS DANS LA REFLEXION""
 
+$ revoir le modèle de Defunt car le modele res.partner inclut déja assez d'attributs pour nous, il manque
+juste l'état de vie, les différentes dates. Il ya déja le nom. Donc Defunt sera un modèle qui 
+héritera de res.partner
+$ ça sera pareil pour Responsable_defunt, on a déjà nom et telephone, on va ajouter le lien avec le defunt 
+la cni. 
+
 ****************************
 TACHES ACCOMPLIES
 ****************************
 $ Manifest -- OK
-$ icon image -- 
+$ icon image -- OK
+
+P76 Daniel Reis
+- creation de l'application:
+    1- logo 
+    2- top menu item 
+    3- groupes de sécurité (user and manager levels) : on cré les catégories d'utilisateurs dans le xml 
+    puis on les utilise dans le csv pour définir les éléments de sécurité
+
+- creation de test 
+    - Le modele de mort sera appelé Cadavre. 
+P84 -- PB avec le test ça ne retourne aucun résultat
