@@ -60,6 +60,8 @@ juste l'état de vie, les différentes dates. Il ya déja le nom. Donc Defunt se
 héritera de res.partner
 $ ça sera pareil pour Responsable_defunt, on a déjà nom et telephone, on va ajouter le lien avec le defunt 
 la cni. 
+$ On peut introduire un codebar à chaque défunt : Un code est valide  tant que le mort est en invalidité financière: tant qu'il n'a pas 
+réglé sa dette avec la morgue. 
 
 ****************************
 TACHES ACCOMPLIES
@@ -76,4 +78,4 @@ P76 Daniel Reis
 
 - creation de test 
     - Le modele de mort sera appelé Cadavre. 
-P84 -- PB avec le test ça ne retourne aucun résultat
+P85 -- PB avec le test ça ne retourne aucun résultat
