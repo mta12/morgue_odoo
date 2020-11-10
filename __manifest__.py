@@ -27,9 +27,10 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
         'security/morgue_cmr_security.xml',
+        'security/ir.model.access.csv',
         'views/morgue_cmr_menu.xml',
+        'views/vue_cadavre.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

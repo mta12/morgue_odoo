@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+
+  <record id="view_form_cadavre" model="ir.ui.view">
+    <field name="name">Formulaire Cadavre</field>
+    <field name="model">morgue_cmr.cadavre</field>
+    <field name="arch" type="xml">
+      <form string="Le décédé">
+        <group>
+          <field name="nom_complet" />
+          <field name="sexe" />
+          <field name="responsable" widget="many2many_tags" />
+          <field name="date_enreng" />
+          <field name="date_sortie" />
+          <field name="date_deces" />
+          <field name="actif" />
+          <field name="etat_corps"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+
+</odoo>

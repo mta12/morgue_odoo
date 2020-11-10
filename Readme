@@ -1,6 +1,6 @@
 Module de gestion d'une morgue dans ODOO12
 
-BD odoo-test
+BD odoo21-test
 localhost:8069
 
 GIT 
@@ -14,7 +14,7 @@ git status
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/mta12/morgue_odoo.git
-git push -u origin main
+
 
 ***********************
 LES FONCTIONNALITES 
@@ -78,4 +78,22 @@ P76 Daniel Reis
 
 - creation de test 
     - Le modele de mort sera appelé Cadavre. 
-P85 -- PB avec le test ça ne retourne aucun résultat
+P85 -- PB avec le test ça ne retourne aucun résultat (ça n'a pas marché car la BD manquait 
+    de donnée)
+donc odoo-test n'a pas de données démo 
+ce qui est le cas pour odoo21-test
+
+--les règles de sécurité aident à limiter l'accès à une information 
+    On définit la règle et on l'applique au groupe d'employés
+
+-- <data noupdate="1"> : élément créé à l'installation du module et pas modifié à 
+    sa mise à jour. Mettre à 0 quand on veut faire une mise à niveau
+
+#### LES VUES 
+
+- The <act_window> element defines a client-side window action that will open 
+the library.book model with the tree and form views enabled, in that order
+- The <menuitem> defines a top menu item that calls the action_library_book
+action, which was defined before
+
+P96

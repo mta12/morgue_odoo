@@ -6,16 +6,29 @@
 
     <!-- Morgue User Group -->
     <record id="morgue_cmr_group_user" model="res.groups">
-        <field name="name">User</field>
+        <field name="name">Utilisateur</field>
         <field name="category_id" ref="module_morgue_cmr_category"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
     <!-- Library Manager Group -->
     <record id="morgue_cmr_group_manager" model="res.groups">
-        <field name="name">Manager</field>
+        <field name="name">Manageur</field>
         <field name="category_id" ref="module_morgue_cmr_category"/>
         <field name="implied_ids" eval="[(4, ref('morgue_cmr_group_user'))]"/>
         <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
     </record>
+
+    <!-- Règles d'accès  -->
+    <data noupdate="1">
+        <record id="cadavre_user_rule" model="ir.rule">
+            <field name="name">Acces utilisateur au modèle cadavre</field>
+            <field name="model_id" ref="model_morgue_cmr_cadavre"/>
+            <field name="domain_force">
+                [('actif','=',True)]
+            </field>
+            <field name="groups" eval="[(4,ref('morgue_cmr_group_user'))]"/>
+        </record>
+</data>
+
 </odoo>

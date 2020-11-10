@@ -8,7 +8,7 @@ class TestEnregMort(TransactionCase):
         result = super().setUp(*args, **kwargs)
         self.Cadavre = self.env['morgue_cmr.cadavre']
         self.cadav = self.Cadavre.create({
-            'nom_prenom': 'Milika Dieu donné',
+            'nom_complet': 'Milika Dieu donné',
             'sexe': 'Masculin',
             'date_decces': date.today() + timedelta(-1),
             'date_enreg': date.today(),
