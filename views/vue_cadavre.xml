@@ -1,24 +1,66 @@
 <?xml version="1.0"?>
 <odoo>
 
+<!-- Formulaire d'enregistrement -->
   <record id="view_form_cadavre" model="ir.ui.view">
     <field name="name">Formulaire Cadavre</field>
     <field name="model">morgue_cmr.cadavre</field>
     <field name="arch" type="xml">
       <form string="Le décédé">
-        <group>
-          <field name="nom_complet" />
-          <field name="sexe" />
-          <field name="responsable" widget="many2many_tags" />
-          <field name="date_enreng" />
-          <field name="date_sortie" />
-          <field name="date_deces" />
-          <field name="actif" />
-          <field name="etat_corps"/>
+        <header>
+          <!-- Buttons will go here -->
+          <button name="liberation_cadavre" type="object"
+            string="Libérer Le corps" /> 
+              <!-- Lance une procédure de facturation -->
+        </header>
+        <sheet>
+        <group name="Formulaire d'un cadavre">
+          <group name="Informations personnelles">
+            <field name="nom_complet" />
+            <field name="sexe" />
+            <field name="responsable" widget="many2many_tags" />
+            <field name="etat_corps"/>
+          </group>
+          <group name="Informaition ocmplmentaire">
+            <field name="date_enreng" />
+            <field name="date_sortie" />
+            <field name="date_deces" />            
+            <field name="actif"/>
+          </group>
         </group>
+        </sheet>
       </form>
     </field>
   </record>
 
+<!-- Liste des résultats -->
+<record id="view_tree_cadavre" model="ir.ui.view">
+  <field name="name">Liste des Morts</field>
+    <field name="model">morgue_cmr.cadavre</field>
+    <field name="arch" type="xml">
+    <tree>
+      <field name="nom_complet"/>
+      <field name="responsable" widget="many2many_tags" />
+      <field name="sexe"/>      
+      <field name="date_enreng"/>
+      <field name="date_sortie"/>
+    </tree>
+  </field>
+</record>
+
+<!-- Filtre de recherche -->
+<record id="view_search_cadavre" model="ir.ui.view">
+  <field name="name">Filtres pour Cadavres</field>
+  <field name="model">morgue_cmr.cadavre</field>
+  <field name="arch" type="xml">
+    <search>
+      <field name="nom_complet"/>
+      <filter name="filter_actifs" string="Les Actifs"
+        domain="[('actif','=',True)]"/>
+      <filter name="filter_inactifs" string="Les Non Actifs"
+        domain="[('actif','=',False)]"/>
+    </search>
+  </field>
+</record>
 
 </odoo>

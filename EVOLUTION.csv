@@ -1,0 +1,14 @@
+Tache, Description, Etat d'évolution
+
+modele cadavre, Le modele , OK
+    , La vue création, OK 
+    , la vue liste, OK 
+    , la vue recherche, OK 
+    , la logique métier (opérations), en attente
+modele coffre,  Le modele , NOK
+    , La vue création, NOK 
+    , la vue liste, NOK 
+    , la vue recherche, NOK 
+    , la logique métier (opérations), en attente
+lien cadavre coffre, 
+modele facturation,
